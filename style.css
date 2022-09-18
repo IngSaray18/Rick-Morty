@@ -1,122 +1,135 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #3c484e;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.Header-main {
+@import '/reset.css';
+ 
+ 
+ body{
+  background-color: #A5C9CA;
+ }
+ .Header-main{
+  height: 70px;
+  background-color:  #2C3333;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+ }
+.logo-img{
+  transform: scale(1.5);
+  height: 80px;
 }
 
-.Header a {
-  text-decoration: none;
-  color: #15302C;
-}
-
-.Main {
-  padding: 10px;
-  grid-template-columns: minmax(auto, 976px);
+.Characters{
+  margin-top: 50px;
   display: grid;
-  justify-content: center;
+  place-items: center;
+  grid-template-columns: repeat(4 , 1fr);
 }
-
-.Characters {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  grid-row-gap: 1.5em;
-  display: grid;
-}
-
-.Characters-inner {
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1.5rem;
-  grid-row-gap: 1.5em;
-  display: grid;
-}
-
-.Characters-card {
-  text-decoration: none;
-  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
-  border-radius: 5px;
-  margin: 0 0 20px 0;
-  display: block;
-  animation-duration: 2s;
-  animation-name: fade;
-}
-
-.Characters-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px 5px 0 0;
-}
-
-.Characters-card h2 {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-}
-
-.Characters-card h3 {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: left;
+.Character-item{
   margin: 20px;
-}
+  border-radius: 10px;
+  transition: .5s ease all;
 
-.Characters-item {
+  background-color: #395B64;
+}
+.Character-item:hover{
+  transform: scale(1.2);
+}
+.Character-item a {
+  font-size: 2rem;
+}
+.Character-item h2{
+  font-weight: bold;
+  text-align: center;
+max-width: 300px;
+}
+.Character-item img{
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0px;
+
+}
+ a{
   text-decoration: none;
-  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
-  border-radius: 5px;
-  margin: 0 0 20px 0;
-  display: block;
-  animation-duration: 2s;
-  animation-name: fade;
-}
+  color: #ffff;
+ }
+ .logo-img{
+  max-width: 250px;
+  
+  
+ 
+ }
+ .Header-nav{
+  align-self: center;
+  margin-right: 20px;
+  font-size: 2rem;
+ }
 
-.Characters-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px 5px 0 0;
-}
-
-.Characters-item h2 {
-  font-size: 18px;
-  font-weight: 300;
-  padding: 5px 10px;
+ .Character-inner{
+  border-radius: 10px;
+  background-color: #395B64;
   display: flex;
-  justify-content: space-between;
+margin-top: 15%;
+  gap: 20px;
+ }
+ .Characters-card img{ 
+border-radius: 10px;
+min-width: 300px;
 }
+#con{display: flex;
 
-.Characters-item a {
-  text-decoration: none;
-  color: #026C86;
+  justify-content: center;
+
+
 }
+ 
 
-@keyframes fade {
-  from {
-    opacity: 0;
+ #info{
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 10px;
+  font-size: 2em;
+  min-width: 610px;
+  color: white;
+} 
+.Error404{
+width: 100%;
+}
+.Error404 img{ 
+  max-height: 900px;
+width: 100%;}
+@media screen and (max-width: 800px){
+
+  .Character-inner{
+  justify-items: center;
+  text-align: center;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #395B64;
+    display: flex;
+    flex-direction: column;
+  margin-top: 15%;
+    
+   }
+   #info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;}
+    #info h3{
+      max-width: 300px;
+    }
+    .Characters{
+      margin-top: 50px;
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 500px){
+  .Characters{
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(1,1fr);
   }
-  to {
-    opacity: 1;
-  }
-}
-
-.Main-loading {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
